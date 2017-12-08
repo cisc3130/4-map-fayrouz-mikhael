@@ -55,7 +55,7 @@ void calc_bigrams(const string& fn) {
             process(words);
             
             unigram_counts[words]++; // increment it.
-			bigram_counts[make_pair(prevwords, words)] ++ ;  
+			bigram_counts[make_pair(prevwords, words)]++ ;  
 			prevwords == words;
 }
 file.close();
@@ -79,7 +79,7 @@ pair <string, string> ss_pair;
 ss_pair = std::make_pair(m1, m2);
 	m1 = ss_pair.first;
 	m2 = ss_pair.second;
-	count = bigram_counts[ss_pair]/unigram_counts[m1]; 	
+	count = (bigram_counts[ss_pair])/unigram_counts[m1]; 	
 
 	process(m1);
     process(m2);
@@ -90,8 +90,8 @@ if(bigram_counts.find(make_pair(m1, m2)) == bigram_counts.end())
 std :: cout << "Bigram not found" ;
 	
 
-	cout << m1 << "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
-	cout << m1 <<"," << m2 << "  appears " << bigram_counts[make_pair(m1, m2)] << " times"  << std ::endl;
+	cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
+	cout << m1 <<"," << m2 << " appears " << bigram_counts[make_pair(m1, m2)] << " times"  << std ::endl;
 	cout << count << endl;
 
 return;
