@@ -72,6 +72,7 @@ file.close();
 
 void lookup_bigram(const string& w1, const string& w2) {
 float count;
+float county; 
 
 string m1 = w1;
 string m2 = w2 ;
@@ -80,8 +81,7 @@ map<pair<string, string>, float> ::iterator it1;
 	process(m1);
     process(m2);
     
-    
-		
+
    //pair <string, string> ss_pair;
    //ss_pair = std::make_pair(m1, m2);
    //m1 = ss_pair.first;
@@ -98,14 +98,15 @@ std :: cout << "Bigram not found" ;
 	cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 	
 	it1 = bigram_counts.begin();
-    float county; 
     
-    while(it1 != bigram_counts.end() ){
+    
+    while(it1 != bigram_counts.end()){
     	county = it1->second ;
+    	count = (it1->second) /unigram_counts[it1->first.first];
     	it1 ++ ;
 	}   
 	
-	count = (bigram_counts[make_pair(m1,m2)])/unigram_counts[m1]; 
+//	count = (bigram_counts[make_pair(m1,m2)])/unigram_counts[m1]; 
 	
 	
 	cout << m1 <<"," << m2 << " appears " << county<< " times"  << std ::endl;
