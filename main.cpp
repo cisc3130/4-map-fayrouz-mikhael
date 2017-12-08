@@ -73,14 +73,15 @@ file.close();
 
 void lookup_bigram(const string& w1, const string& w2) {
 float count;
-
+float countp;
+float countw;
 
 string m1 = w1;
 string m2 = w2 ;
 
 
 map<pair<string, string>, float>::iterator it;
-//map<string, float> :: iterator it2;
+map<string, float> :: iterator it2;
 
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
@@ -100,16 +101,19 @@ cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std
 
 
 it = bigram_counts.begin();
+it2 = unigram_counts.begin();
 
-while(it!=bigram_counts.end()){
-	count = bigram_counts[ss_pair]/unigram_counts[m1];
+while(it!=bigram_counts.end()&& it2 !=unigram_counts.end()){
+	countp = (it->second);
+	countw = it2->second;
 	it++;
+	it2++;
 }
 
-cout << m1 <<"," << m2 << " appears " << it->second<< " times"  << std ::endl;
+cout << m1 <<"," << m2 << " appears " << countp<< " times"  << std ::endl;
 
 
-cout << count << endl;
+cout << countp/countw << endl;
 
 
 return;
@@ -128,3 +132,4 @@ void process(string& str) {
 	}
 	str.erase(remove(str.begin(), str.end(), '*'), str.end());
 }
+
