@@ -10,6 +10,7 @@ using namespace std;
 map<pair<string, string>, float> bigram_counts;
 map<string, float> unigram_counts;
 
+
 void calc_bigrams(const string&);
 void lookup_bigram(const string&, const string&);
 void process(string&);
@@ -78,18 +79,19 @@ string m1 = w1;
 string m2 = w2 ;
 
 
-
 map<pair<string, string>, float>::iterator it;
 
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
 
+bigram_counts[ss_pair]++;
+ 
 
 process(m1);
 process(m2);
     
 
-if(bigram_counts.find(make_pair(m1, m2)) != bigram_counts.end())
+if(bigram_counts.find(make_pair(m1, m2)) == bigram_counts.end())
 std :: cout << "Bigram not found" ; 
 
 
