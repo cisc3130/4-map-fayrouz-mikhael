@@ -80,6 +80,7 @@ string m2 = w2 ;
 
 
 map<pair<string, string>, float>::iterator it;
+//map<string, float> :: iterator it2;
 
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
@@ -99,15 +100,14 @@ std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 		
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 
-cout << m1 <<"," << m2 << " appears " << bigram_counts[ss_pair]<< " times"  << std ::endl;
-
-
 
 it = bigram_counts.begin();
 while(it!=bigram_counts.end()){
 	count = (it->second)/unigram_counts[m1];
 	it++;
 }
+
+cout << m1 <<"," << m2 << " appears " << it->second<< " times"  << std ::endl;
 cout << count << endl;
 
 
