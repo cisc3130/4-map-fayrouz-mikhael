@@ -72,6 +72,8 @@ file.close();
 
 void lookup_bigram(const string& w1, const string& w2) {
 float count;
+float countpair; 
+
 string m1 = w1;
 string m2 = w2 ;
 
@@ -96,11 +98,12 @@ std :: cout << "Bigram not found" ;
 	ss_pair = it->first;
 	m1 = ss_pair.first;
 	m2 = ss_pair.second;
+	countpair = it->second;
 	
 }
 
 	cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
-	cout << m1 <<"," << m2 << " appears " << bigram_counts[make_pair(m1, m2)] << " times"  << std ::endl;
+	cout << m1 <<"," << m2 << " appears " << countpair << " times"  << std ::endl;
 	cout << count << endl;
 
 return;
