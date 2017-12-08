@@ -98,11 +98,15 @@ std :: cout << "Bigram not found" ;
 	for(map<pair<string, string>, float>:: iterator it= bigram_counts.begin() ;  it != bigram_counts.end() ; ++it)
 	{
 	ss_pair = it->first;
-	bigram_counts[ss_pair];
-	countpair = it->second;	
+	 m1 = ss_pair.first;
+     m2 = ss_pair.second;
+	countpair = it->second;
+cout << countpair << endl ;
+
 	}
 	
-	cout << m1 <<"," << m2 << " appears " << countpair << " times"  << std ::endl;
+	cout << m1 <<"," << m2 << " appears " << countpair << " times"  << std ::endl;		
+	
 	cout << count << endl;
 
 return;
