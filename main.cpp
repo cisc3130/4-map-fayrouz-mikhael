@@ -101,12 +101,12 @@ cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std
 
 it = bigram_counts.begin();
 
-cout << m1 <<"," << m2 << " appears " << it->second<< " times"  << std ::endl;
-
 while(it!=bigram_counts.end()){
-	count = (it->second)/unigram_counts[m1];
+	count = bigram_counts[ss_pair]/unigram_counts[m1];
 	it++;
 }
+
+cout << m1 <<"," << m2 << " appears " << it->second<< " times"  << std ::endl;
 
 
 cout << count << endl;
