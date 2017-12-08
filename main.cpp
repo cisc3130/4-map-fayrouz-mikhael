@@ -81,27 +81,23 @@ map<pair<string, string>, float> ::iterator it1;
 	process(m1);
     process(m2);
     
-
-   //pair <string, string> ss_pair;
-   //ss_pair = std::make_pair(m1, m2);
-   //m1 = ss_pair.first;
-   //m2 = ss_pair.second;
-   
    	
-   std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
+std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 	
 
 if(bigram_counts.find(make_pair(m1, m2)) == bigram_counts.end())
 std :: cout << "Bigram not found" ;
 	
 
-	cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
+cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 	
 	it1 = bigram_counts.begin();
-    
-    
+	
     while(it1 != bigram_counts.end()){
-    	county = it1->second ;
+    	
+    	
+    	
+    	county = bigram_counts[make_pair(m1,m2)] ;
     	count = (it1->second) /unigram_counts[it1->first.first];
     	it1 ++ ;
 	}   
