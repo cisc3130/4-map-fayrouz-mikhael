@@ -99,9 +99,10 @@ for (it = bigram_counts.begin(); it!=bigram_counts.end() ; ++ it){
 	m1 = ss_pair.first;
 	m2= ss_pair.second;
 	countp = it->second;
+
+cout << m1 <<"," << m2 << " appears " << countp<< " times"  << std ::endl;	
 }
 
-cout << m1 <<"," << m2 << " appears " << countp<< " times"  << std ::endl;
 
 
 cout << countp/unigram_counts[m1] << endl;
