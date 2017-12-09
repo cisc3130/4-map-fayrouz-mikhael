@@ -101,13 +101,12 @@ while( it!=bigram_counts.end() ){
 	m1 = ss_pair.first;
     m2= ss_pair.second;
 	countp = it->second;
-	cout << "  " << countp << std:: endl;
 ++it;
 }
 
-cout << m1 <<"," << m2 << " appears " << countp<< " times"  << std ::endl;	
+cout << m1 <<"," << m2 << " appears " << bigram_counts[ss_pair]<< " times"  << std ::endl;	
 
-cout << countp/unigram_counts[m1] << endl;
+cout << bigram_counts[ss_pair]/unigram_counts[m1] << endl;
 
 }
 
