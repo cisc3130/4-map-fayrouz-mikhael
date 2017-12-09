@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -86,6 +87,7 @@ std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 if(bigram_counts.find(make_pair(m1, m2)) == bigram_counts.end())
 std :: cout << "Bigram not found" ; 
 
+else{
 
  		
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
@@ -109,8 +111,10 @@ cout << m1 <<"," << m2 << " appears " << countp<< " times"  << std ::endl;
 cout << countp/unigram_counts[m1] << endl;
 
 
-return;
 
+
+}
+return;
 }
 
 
