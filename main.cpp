@@ -99,8 +99,9 @@ it = bigram_counts.begin();
 while( it!=bigram_counts.end() ){
 	ss_pair = it->first;
 	m1 = ss_pair.first;
-m2= ss_pair.second;
+    m2= ss_pair.second;
 	countp = it->second;
+	cout << "  " << countp << std:: endl;
 ++it;
 }
 
