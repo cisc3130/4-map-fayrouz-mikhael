@@ -97,6 +97,7 @@ it = bigram_counts.begin();
 while( it!=bigram_counts.end() ){
 	ss_pair = it->first;
 	countp = it->second;
+	countp = countp+1;
 ++it;
 }
 
