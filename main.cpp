@@ -84,7 +84,8 @@ std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 map<pair<string, string>, float>::iterator it;
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
-
+m1 = ss_pair.first;
+m2= ss_pair.second;
 
 if(bigram_counts.find(ss_pair) == bigram_counts.end())
 std :: cout << "Bigram not found"  << std::endl; 
@@ -92,13 +93,11 @@ std :: cout << "Bigram not found"  << std::endl;
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 
 
-
-for (it = bigram_counts.begin(); it!=bigram_counts.end() ; ++it){
+it = bigram_counts.begin();
+while( it!=bigram_counts.end() ){
 	ss_pair = it->first;
-	m1 = ss_pair.first;
-	m2= ss_pair.second;
 	countp = it->second;
-
+++it;
 }
 
 cout << m1 <<"," << m2 << " appears " << countp<< " times"  << std ::endl;	
