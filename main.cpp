@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -83,20 +82,17 @@ process(m1);
 process(m2);
 std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 
+map<pair<string, string>, float>::iterator it;
+pair<string ,string > ss_pair;
+ss_pair = std::make_pair(m1,m2);
 
-if(bigram_counts.find(make_pair(m1, m2)) == bigram_counts.end())
+
+if(bigram_counts.find(ss_pair) == bigram_counts.end())
 std :: cout << "Bigram not found" ; 
 
-else{
-
- 		
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 
 
-pair<string ,string > ss_pair;
-map<pair<string, string>, float>::iterator it;
-
-ss_pair = std::make_pair(m1,m2);
 
 for (it = bigram_counts.begin(); it!=bigram_counts.end() ; ++ it){
 	ss_pair = it->first;
@@ -112,8 +108,6 @@ cout << countp/unigram_counts[m1] << endl;
 
 
 
-
-}
 return;
 }
 
