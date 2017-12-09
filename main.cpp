@@ -87,7 +87,7 @@ ss_pair = std::make_pair(m1,m2);
 m1 = ss_pair.first;
 m2= ss_pair.second;
 
-if(bigram_counts.find(ss_pair) == bigram_counts.end())
+if(bigram_counts.count(ss_pair)<0)
 std :: cout << "Bigram not found"  << std::endl; 
 
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
@@ -97,7 +97,6 @@ it = bigram_counts.begin();
 while( it!=bigram_counts.end() ){
 	ss_pair = it->first;
 	countp = it->second;
-	countp = countp+1;
 ++it;
 }
 
@@ -119,3 +118,4 @@ void process(string& str) {
 	}
 	str.erase(remove(str.begin(), str.end(), '*'), str.end());
 }
+
