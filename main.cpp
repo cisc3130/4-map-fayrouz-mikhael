@@ -95,13 +95,11 @@ m2= ss_pair.second;
 
 countp = it->second;
 
-
-if(bigram_counts.count(ss_pair)<0)
-std :: cout << "Bigram not found"  << std::endl; 
-	
 ++it;
 }
 
+if(bigram_counts.count(make_pair(m1,m2))<0)
+std :: cout << "Bigram not found"  << std::endl; 
 
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 
