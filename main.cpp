@@ -86,12 +86,12 @@ std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
 
-
-if(!(bigram_counts[ss_pair])){
+auto it = bigram_counts(ss_pair);
+if(it == bigram_counts.end()){
 std :: cout << "Bigram not found"  << std::endl; 
 return;	
 }
-
+else{
 //bigram_counts[ss_pair] +=1 ;
 
 
@@ -114,7 +114,7 @@ cout << m1 <<"," << m2 << " appears " << bigram_counts[ss_pair]<< " times"  << s
 cout << float(bigram_counts[ss_pair]/unigram_counts[m1]) << endl;
 
 }
-
+}
 
 void process(string& str) {
 	for (int i = 0; i < str.length(); ++i) {
