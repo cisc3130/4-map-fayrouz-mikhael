@@ -61,12 +61,6 @@ void calc_bigrams(const string& fn) {
 }
 file.close();
 	
-	int i = 0;
-	for (auto p : bigram_counts) {
-		std::cout << p.first << " " << p.second<< std::endl;
-		if (++i>=5) break;
-	}
-	
 }
 
 // Given words w1 and w2,
