@@ -57,7 +57,7 @@ void calc_bigrams(const string& fn) {
     process(prevwords);
             unigram_counts[words]++; // increment it.
 			bigram_counts[make_pair(prevwords, words)]++ ;  
-		    prevwords == words;
+		    prevwords = words;
 }
 file.close();
 	
