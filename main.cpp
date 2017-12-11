@@ -72,11 +72,17 @@ file.close();
 // (see example output)
 
 void lookup_bigram(const string& w1, const string& w2) {
+	
+string m1 (w1);
+string m2 (w2) ;
 
-std:: cout << w1 << ", " <<w2  << " : " << std ::endl ;
+process(m1);
+process(m2);
+
+std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 
 pair<string ,string > ss_pair;
-ss_pair = std::make_pair(w1,w2);
+ss_pair = std::make_pair(m1,m2);
 
 
 if(!bigram_counts[ss_pair]){
@@ -85,15 +91,15 @@ return;
 }
 
 
-cout << w1 << " " <<  "appears " << " " << unigram_counts[w1]<< " times"  << std ::endl;
-cout << w1 <<"," << w2 << " appears " << bigram_counts[ss_pair]<< " times"  << std ::endl;	
 
-cout << float(bigram_counts[ss_pair]/unigram_counts[w1]) << endl;
+cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 
-string m1 = w1; 
-string m2 = w2 ;
-process(m1);
-process(m2);
+
+cout << m1 <<"," << m2 << " appears " << bigram_counts[ss_pair]<< " times"  << std ::endl;	
+
+cout << float(bigram_counts[ss_pair]/unigram_counts[m1]) << endl;
+
+
 
 }
 
