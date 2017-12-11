@@ -86,7 +86,7 @@ pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
 
 
-if(!bigram_counts[ss_pair]){
+if(!(bigram_counts[ss_pair])){
 std :: cout << "Bigram not found"  << std::endl; 
 return;	
 }
