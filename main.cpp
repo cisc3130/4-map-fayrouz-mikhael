@@ -50,11 +50,11 @@ void calc_bigrams(const string& fn) {
 		    
 			std::string words;
 	     	std::string prevwords;
-	     	
-	    	while(file >> words){
-	     	
-            process(words);
-            
+	     	file >> words;
+	process(words);
+	    	while(file){
+	     	file>>prevwords;
+    process(prevwords);
             unigram_counts[words]++; // increment it.
 			bigram_counts[make_pair(prevwords, words)]++ ;  
 		    prevwords == words;
