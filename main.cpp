@@ -55,11 +55,14 @@ void calc_bigrams(const string& fn) {
 	    	while(file >> words){
 	    		
 	    	 process(words);
+	    	 
+	    	   if(words.size()!=0)
+            unigram_counts[words]++; // increment it.
+	    	 
 			 if(prevwords.size()!=0)	
 	       bigram_counts[make_pair(prevwords, words)]++ ; 
 	       
-	       if(words.size()!=0)
-            unigram_counts[words]++; // increment it.
+	     
             
 			 
 		    prevwords = words;
@@ -85,18 +88,21 @@ string m2 = w2;
 process(m1);
 process(m2);
 
-std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
+
 
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
 
 auto it = bigram_counts.find(ss_pair);
 if(it==bigram_counts.end()){
-std :: cout << "Bigram not found"  << std::endl; 
+std :: cout << "Bigram" << " " << m1 << "," << m2 << "not found"  << std::endl; 
 return;	
 }
 
+
 else{
+	
+std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
 
