@@ -45,8 +45,8 @@ int main(int argc, char* argv[]) {
 void calc_bigrams(const string& fn) {
 
 
-	     	std::ifstream file(fn);
-		    //file.open(fn);
+	     	std::ifstream file;
+		    file.open(fn);
 		    
 			std::string words;
 	     	std::string prevwords;
@@ -55,12 +55,14 @@ void calc_bigrams(const string& fn) {
 	    	while(file >> words){
 	    		
 	    	 process(words);
+			
+		
+			 if(prevwords.size()!=0)	
+	       bigram_counts[make_pair(prevwords, words)]++ ; 	
 	    	 
 	    	   if(words.size()!=0)
             unigram_counts[words]++; // increment it.
 	    	 
-			 if(prevwords.size()!=0)	
-	       bigram_counts[make_pair(prevwords, words)]++ ; 
 	       
 	     
             
@@ -68,7 +70,7 @@ void calc_bigrams(const string& fn) {
 		    prevwords = words;
 }
 
-//file.close();
+file.close();
 }
 
 // Given words w1 and w2,
