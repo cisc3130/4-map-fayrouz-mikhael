@@ -73,18 +73,13 @@ file.close();
 
 void lookup_bigram(const string& w1, const string& w2) {
 
-string m1 = w1; 
-string m2 = w2 ;
-process(m1);
-process(m2);
-
 std:: cout << w1 << ", " <<w2  << " : " << std ::endl ;
 
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(w1,w2);
 
 
-if((!bigram_counts[ss_pair])){
+if(!bigram_counts[ss_pair]){
 std :: cout << "Bigram not found"  << std::endl; 
 return;	
 }
@@ -93,8 +88,12 @@ return;
 cout << w1 << " " <<  "appears " << " " << unigram_counts[w1]<< " times"  << std ::endl;
 cout << w1 <<"," << w2 << " appears " << bigram_counts[ss_pair]<< " times"  << std ::endl;	
 
-float count = bigram_counts[ss_pair]/unigram_counts[w1];
-cout <<  count << endl;
+cout << float(bigram_counts[ss_pair]/unigram_counts[w1]) << endl;
+
+string m1 = w1; 
+string m2 = w2 ;
+process(m1);
+process(m2);
 
 }
 
@@ -110,4 +109,3 @@ void process(string& str) {
 	}
 	str.erase(remove(str.begin(), str.end(), '*'), str.end());
 }
-
