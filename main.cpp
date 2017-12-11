@@ -86,7 +86,7 @@ std:: cout << m1 << ", " <<m2  << " : " << std ::endl ;
 pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
 
-auto it = bigram_counts(ss_pair);
+auto it = bigram_counts.find(ss_pair);
 if(it == bigram_counts.end()){
 std :: cout << "Bigram not found"  << std::endl; 
 return;	
