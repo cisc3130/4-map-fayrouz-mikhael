@@ -86,14 +86,13 @@ pair<string ,string > ss_pair;
 ss_pair = std::make_pair(m1,m2);
 
 
-if(!(bigram_counts[ss_pair])){
+if(bigram_counts.count(make_pair(w1,w2))<0){
 std :: cout << "Bigram not found"  << std::endl; 
 return;	
 }
 
 else{
 
-//bigram_counts[ss_pair] +=1 ;
 
 
 cout << m1 << " " <<  "appears " << " " << unigram_counts[m1]<< " times"  << std ::endl;
